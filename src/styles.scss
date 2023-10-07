@@ -1,1 +1,28 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'app/settings-page/chart-modal/chart-modal.scss';
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+input,
+button,
+textarea,
+select {
+	margin: 0;
+	font: inherit;
+}
+
+ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}

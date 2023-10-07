@@ -1,0 +1,41 @@
+<div>
+  <h1 mat-dialog-title>{{ data.chart ? data.chart.name : 'Create chart' }}</h1>
+  <div mat-dialog-content>
+    <mat-form-field>
+      <mat-label>Chart name</mat-label>
+      <input
+        matInput
+        #name
+        maxlength="20"
+        (keyup)="getNameInput(name.value)"
+        value="{{ data.chart?.name || '' }}" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Select chart type</mat-label>
+      <mat-select [(value)]="chartType">
+        <mat-option value="line">line</mat-option>
+        <mat-option value="spline">spline</mat-option>
+        <mat-option value="bar">bar</mat-option>
+        <mat-option value="area">area</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Select chart color</mat-label>
+      <mat-select [(value)]="chartColor">
+        <mat-option value="#2196f3">Blue</mat-option>
+        <mat-option value="#f44336">Red</mat-option>
+        <mat-option value="#9c27b0">Purple</mat-option>
+        <mat-option value="#009688">Teal</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button *ngIf="data.chart" mat-button mat-dialog-close cdkFocusInitial (click)="updateChart()">
+      Update chart
+    </button>
+    <button *ngIf="!data.chart" mat-button mat-dialog-close cdkFocusInitial (click)="createChart()">
+      Create chart
+    </button>
+  </div>
+</div>

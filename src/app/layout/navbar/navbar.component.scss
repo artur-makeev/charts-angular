@@ -1,0 +1,13 @@
+.toolbar {
+	gap: 15px;
+}
+
+.links {
+	display: flex;
+	gap: 15px;
+}
+
+.active {
+	text-decoration: underline;
+	text-underline-position: under;
+}

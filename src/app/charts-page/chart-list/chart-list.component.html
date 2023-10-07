@@ -1,0 +1,5 @@
+<ul class="container">
+  <li *ngFor="let chart of charts$ | async">
+    <app-chart [chart]="chart" [range]="range$ | async" />
+  </li>
+</ul>
